@@ -11,7 +11,7 @@ import (
 type CryptoInfo struct {
 	Symbol string  `json:"symbol"`
 	Name   string  `json:"name"`
-	Price  float64 `json:"price"`
+	Price  float64 `json:"price,string"`
 }
 
 func GetCryptoPriceBTC(symbol string) (CryptoInfo, error) {
