@@ -8,6 +8,17 @@ import (
 	"github.com/miguellopezp25-cell/crypto-tracker-go-react/backend/service"
 )
 
+var coinNames = map[string]string{
+	"BTCUSDT":  "Bitcoin",
+	"ETHUSDT":  "Ethereum",
+	"BNBUSDT":  "Binance Coin",
+	"XRPUSDT":  "Ripple",
+	"ADAUSDT":  "Cardano",
+	"SOLUSDT":  "Solana",
+	"DOTUSDT":  "Polkadot",
+	"DOGEUSDT": "Dogecoin",
+}
+
 func getBinanceHandler(c *gin.Context) {
 	symbol := c.Param("symbol")
 	symbol = strings.ToUpper(symbol)
@@ -18,33 +29,9 @@ func getBinanceHandler(c *gin.Context) {
 		return
 	}
 
-	name := priceTracking.Name
-	if name == "" {
-		if priceTracking.Symbol == "BTCUSDT" {
-			name = "Bitcoin"
-
-		}
-		if priceTracking.Symbol == "ETHUSDT" {
-			name = "Ethereum"
-
-		}
-		if priceTracking.Symbol == "BNBUSDT" {
-			name = "Binance Coin"
-
-		}
-		if priceTracking.Symbol == "XRPUSDT" {
-			name = "Ripple"
-
-		}
-		if priceTracking.Symbol == "ADAUSDT" {
-			name = "Cardano"
-
-		}
-		if priceTracking.Symbol == "SOLUSDT" {
-			name = "Solana"
-
-		}
-
+	name, exists := coinNames[priceTracking.Symbol]
+	if !exists {
+		name = priceTracking.Symbol
 	}
 
 	c.JSON(http.StatusOK, gin.H{
