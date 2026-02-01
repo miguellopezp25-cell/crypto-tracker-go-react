@@ -17,7 +17,7 @@ func StartServer() {
 	port := config.GetEnv("PORT")
 	router := gin.Default()
 
-	router.GET("/binance/tracking", getBinanceHandler)
+	router.GET("/binance/tracking/:symbol", getBinanceHandler)
 
 	router.Run(":" + port) // escucha en 0.0.0.0:8081 por defecto
 	fmt.Println("Server running on port " + port)
