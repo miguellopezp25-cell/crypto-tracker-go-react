@@ -17,8 +17,24 @@ func StartServer() {
 	port := config.GetEnv("PORT")
 	router := gin.Default()
 
+	router.Use(func(c *gin.Context) {
+		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+		c.Writer.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+		c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+
+		if c.Request.Method == "OPTIONS" {
+			c.AbortWithStatus(204)
+			return
+		}
+		c.Next()
+	})
 	router.GET("/binance/tracking/:symbol", getBinanceHandler)
 
-	router.Run(":" + port) // escucha en 0.0.0.0:8081 por defecto
+	err = router.Run(":" + port) // escucha en 0.0.0.0:8081 por defecto
+	if err != nil {
+		fmt.Println("Error starting server:", err)
+		return
+	}
 	fmt.Println("Server running on port " + port)
+
 }
