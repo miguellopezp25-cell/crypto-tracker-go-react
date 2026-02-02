@@ -12,14 +12,18 @@ import (
 )
 
 func GetCryptoPriceBTC(symbol string) (schema.CryptoInfo, error) {
-	urlEnv := config.GetEnv("API_URL_CRYPTO")
+
+	cfg, err := config.LoadConfig()
+	if err != nil {
+		return schema.CryptoInfo{}, err
+	}
+	urlEnv := cfg.Api.APIURL
 	url := fmt.Sprintf("%s%s", urlEnv, symbol)
 
 	response, err := http.Get(url)
 	if err != nil {
 		return schema.CryptoInfo{}, err
 	}
-	defer response.Body.Close()
 
 	// Validar si Binance respondió con error (ej: símbolo no encontrado)
 	if response.StatusCode != http.StatusOK {

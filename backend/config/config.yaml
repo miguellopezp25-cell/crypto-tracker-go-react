@@ -1,0 +1,6 @@
+server:
+  port: 8080
+  mode: "debug"
+
+api:
+  API_URL_CRYPTO: "https://api.binance.com/api/v3/ticker/price?symbol="

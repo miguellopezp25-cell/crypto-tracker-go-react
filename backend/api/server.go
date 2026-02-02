@@ -8,13 +8,15 @@ import (
 )
 
 func StartServer() {
-	err := config.LoadEnv()
+
+	cfg, err := config.LoadConfig()
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("Error loading config:", err)
 		return
 	}
+	gin.SetMode(cfg.Server.Mode)
 
-	port := config.GetEnv("PORT")
+	port := cfg.Server.Port
 	router := gin.Default()
 
 	router.Use(func(c *gin.Context) {
