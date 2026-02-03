@@ -1,10 +1,12 @@
 mode: set
-github.com/miguellopezp25-cell/crypto-tracker-go-react/backend/service/service.go:17.59,21.16 3 1
-github.com/miguellopezp25-cell/crypto-tracker-go-react/backend/service/service.go:21.16,23.3 1 0
-github.com/miguellopezp25-cell/crypto-tracker-go-react/backend/service/service.go:24.2,27.42 2 1
-github.com/miguellopezp25-cell/crypto-tracker-go-react/backend/service/service.go:27.42,29.3 1 1
-github.com/miguellopezp25-cell/crypto-tracker-go-react/backend/service/service.go:31.2,32.16 2 1
-github.com/miguellopezp25-cell/crypto-tracker-go-react/backend/service/service.go:32.16,34.3 1 0
-github.com/miguellopezp25-cell/crypto-tracker-go-react/backend/service/service.go:36.2,38.16 3 1
-github.com/miguellopezp25-cell/crypto-tracker-go-react/backend/service/service.go:38.16,40.3 1 0
-github.com/miguellopezp25-cell/crypto-tracker-go-react/backend/service/service.go:41.2,41.24 1 1
+github.com/miguellopezp25-cell/crypto-tracker-go-react/backend/service/service.go:14.66,17.16 2 1
+github.com/miguellopezp25-cell/crypto-tracker-go-react/backend/service/service.go:17.16,19.3 1 0
+github.com/miguellopezp25-cell/crypto-tracker-go-react/backend/service/service.go:20.2,24.16 4 1
+github.com/miguellopezp25-cell/crypto-tracker-go-react/backend/service/service.go:24.16,26.3 1 0
+github.com/miguellopezp25-cell/crypto-tracker-go-react/backend/service/service.go:29.2,29.42 1 1
+github.com/miguellopezp25-cell/crypto-tracker-go-react/backend/service/service.go:29.42,31.3 1 1
+github.com/miguellopezp25-cell/crypto-tracker-go-react/backend/service/service.go:33.2,34.16 2 1
+github.com/miguellopezp25-cell/crypto-tracker-go-react/backend/service/service.go:34.16,36.3 1 0
+github.com/miguellopezp25-cell/crypto-tracker-go-react/backend/service/service.go:38.2,40.16 3 1
+github.com/miguellopezp25-cell/crypto-tracker-go-react/backend/service/service.go:40.16,42.3 1 0
+github.com/miguellopezp25-cell/crypto-tracker-go-react/backend/service/service.go:43.2,43.24 1 1

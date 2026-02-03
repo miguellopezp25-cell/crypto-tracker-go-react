@@ -18,7 +18,7 @@ func GetCryptoPriceBTC(symbol string) (schema.CryptoInfo, error) {
 		return schema.CryptoInfo{}, err
 	}
 	urlEnv := cfg.Api.APIURL
-	url := fmt.Sprintf("%s%s", urlEnv, symbol)
+	url := fmt.Sprintf("%s?symbol=%s", urlEnv, symbol)
 
 	response, err := http.Get(url)
 	if err != nil {
